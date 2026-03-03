@@ -21,8 +21,16 @@ def omega(t):
     fluctuation = 0.5 * math.sin(0.5 * t)  # 周波数の揺らぎ
     return base_omega + fluctuation
 
-def angle4(t):
-    A = math.radians(30)
-    return A * math.sin(omega(t) * t)
+# 振幅を揺らす
+def A(t):
+    base_A = math.radians(30)
+    fluctuation = 0.5 * math.sin(0.5 * t)  # 振幅の揺らぎ
+    return base_A + fluctuation
 
+# ノイズを加える
+def noise(t):
+    return 0.1 * math.sin(5 * t)  # ノイズの例
+
+def angle4(t):
+    return A(t) * math.sin(omega(t) * t) + noise(t)  # ノイズを加えた角度
 
