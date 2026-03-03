@@ -34,3 +34,4 @@ def noise(t):
 def angle4(t):
     return A(t) * math.sin(omega(t) * t) + noise(t)  # ノイズを加えた角度
 
+# tmp
